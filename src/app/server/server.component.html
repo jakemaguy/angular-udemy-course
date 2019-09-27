@@ -11,5 +11,12 @@ class="form-control"
 (click)="onCreateServer()">Add Server</button>
 
 <!-- ngIf directive, will print this html element only 
-when the expression in quotes is true -->
-<p *ngIf="serverCreated">In Server.componet with ID: {{ serverName }}</p>
+when the expression in quotes is true
+
+expression was expanded to have an else conditon, referenced to
+noServer ngtemplate-->
+<p *ngIf="serverCreated; else noServer">In Server.componet with ID: {{ serverName }}</p>
+<!-- # is a local reference to ngtemplate block -->
+<ng-template #noServer>
+    <p>No server was created</p>
+</ng-template>
