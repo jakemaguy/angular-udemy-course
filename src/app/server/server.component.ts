@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
 })
 
 export class ServerComponent {
+    // databinding example
+    serverId = 10;
+    serverString = 'offline';
 
+    getServerStatus() {
+        return this.serverString;
+    }
 }
