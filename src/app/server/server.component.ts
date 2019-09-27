@@ -11,6 +11,16 @@ export class ServerComponent {
     serverId = 10;
     serverString = 'offline';
 
+    allowNewServer = false;
+
+    constructor() {
+        setTimeout(() => {
+            // changes the disbabled attribute in the DOM for the button
+            // DOM = Document Object Model
+            this.allowNewServer = true;
+        }, 2000);
+    }
+
     getServerStatus() {
         return this.serverString;
     }
