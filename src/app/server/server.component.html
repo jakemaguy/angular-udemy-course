@@ -1,9 +1,8 @@
-<!--  Square brackets indicate angular property binding 
-WIll allow dynamic angular property binding -->
+<!--  () signal angular event binding -->
 <button class="btn btn-primary"
-[disabled]="!allowNewServer">Add Server</button>
+[disabled]="!allowNewServer"
+(click)="onCreateServer()">Add Server</button>
 
-// Used string interpolation for property binding
-<p [innerText]="allowNewServer"></p>
+<p> {{ serverCreationStatus }} </p>
 
 <h1>In Server.componet with ID: {{ serverId }} is {{ getServerStatus() }}</h1>

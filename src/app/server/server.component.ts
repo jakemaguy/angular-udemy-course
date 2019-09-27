@@ -10,6 +10,7 @@ export class ServerComponent {
     // databinding example
     serverId = 10;
     serverString = 'offline';
+    serverCreationStatus = 'No Server Was Created';
 
     allowNewServer = false;
 
@@ -23,5 +24,11 @@ export class ServerComponent {
 
     getServerStatus() {
         return this.serverString;
+    }
+
+    // on prefix signifies a method that is part of event binding
+    // Not required but good practice
+    onCreateServer() {
+        this.serverCreationStatus = 'Server Was Created';
     }
 }
