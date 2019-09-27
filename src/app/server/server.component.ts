@@ -12,6 +12,8 @@ export class ServerComponent {
     serverString = 'offline';
     serverCreationStatus = 'No Server Was Created';
 
+    serverName = 'TestServer';
+
     allowNewServer = false;
 
     constructor() {
@@ -30,5 +32,13 @@ export class ServerComponent {
     // Not required but good practice
     onCreateServer() {
         this.serverCreationStatus = 'Server Was Created';
+    }
+
+    onUpdateServerName(event: Event) {
+        // Need to run type assertion of event as HTMLInputElement
+        // Then return value
+        this.serverName = (event.target as HTMLInputElement).value;
+        // could also be written as
+        // (<HTMLInputElement>event.target).value
     }
 }
