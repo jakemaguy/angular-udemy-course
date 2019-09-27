@@ -5,13 +5,11 @@ it will also update the value of serverName -->
 class="form-control"
 [(ngModel)]="serverName">
 
-<p>{{ serverName }}</p>
-
 <!--  () signal angular event binding -->
 <button class="btn btn-primary"
 [disabled]="!allowNewServer"
 (click)="onCreateServer()">Add Server</button>
 
-<p> {{ serverCreationStatus }} </p>
-
-<h1>In Server.componet with ID: {{ serverId }} is {{ getServerStatus() }}</h1>
+<!-- ngIf directive, will print this html element only 
+when the expression in quotes is true -->
+<p *ngIf="serverCreated">In Server.componet with ID: {{ serverName }}</p>

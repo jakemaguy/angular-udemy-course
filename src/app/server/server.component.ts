@@ -16,6 +16,9 @@ export class ServerComponent {
 
     allowNewServer = false;
 
+    // Variable created to trigger the directive, initally false
+    serverCreated = false;
+
     constructor() {
         setTimeout(() => {
             // changes the disbabled attribute in the DOM for the button
@@ -31,7 +34,10 @@ export class ServerComponent {
     // on prefix signifies a method that is part of event binding
     // Not required but good practice
     onCreateServer() {
-        this.serverCreationStatus = 'Server Was Created';
+        this.serverCreationStatus = `Server Was Created with ${this.serverName}`;
+        this.serverCreated = true;
+        // this will trigger directive and then html element will appear
+
     }
 
     onUpdateServerName(event: Event) {
