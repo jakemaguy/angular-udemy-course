@@ -19,6 +19,8 @@ export class ServerComponent {
     // Variable created to trigger the directive, initally false
     serverCreated = false;
 
+    servers = ['test server 1', 'testm server 2'];
+
     constructor() {
         setTimeout(() => {
             // changes the disbabled attribute in the DOM for the button

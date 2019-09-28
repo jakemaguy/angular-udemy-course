@@ -1,2 +1,4 @@
 <p [ngStyle]="{backgroundColor: getColor()}"
 [ngClass]="{online: serverStatus === 'online'}">Server Status {{ serverStatus }}</p>
+
+<app-server *ngFor="let server of servers"></app-server>
