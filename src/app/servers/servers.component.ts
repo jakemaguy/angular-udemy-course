@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServerItem  } from '../models/serveritem';
 
 @Component({
   selector: 'app-servers',
@@ -12,18 +13,20 @@ import { Component, OnInit } from '@angular/core';
   }`]
 })
 export class ServersComponent implements OnInit {
-  serverId = 10;
-  serverStatus = 'offline';
+  servername: string;
+  servercontent: string;
+  items: ServerItem[] = [];
+
   constructor() {
-    // simulates server going down and back up randomly
-    this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
    }
 
   ngOnInit() {
   }
-
-  getColor() {
-    return this.serverStatus === 'online' ? 'green' : 'red';
+  onClick(servername: string, servercontent: string, type: string) {
+    console.log(`${servername} ${servercontent}`);
+    this.items.push(
+      new ServerItem(servername, servercontent, type)
+    );
   }
-
 }
+
