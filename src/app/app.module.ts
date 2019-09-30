@@ -5,13 +5,17 @@ import { ServersComponent } from './servers/servers.component';
 
 // The FormsModule is required for Two-Way Binding
 import { FormsModule } from '@angular/forms';
+import { CockpitComponent } from './cockpit/cockpit.component';
+import { ServerElementComponent } from './server-element/server-element.component';
 
 // NGModule declarations for angular app
 @NgModule({
   // Custom Components go into the Declarations section
   declarations: [
     AppComponent,
-    ServersComponent
+    ServersComponent,
+    CockpitComponent,
+    ServerElementComponent
   ],
   imports: [
     BrowserModule,
