@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ServerItem  } from '../models/serveritem';
 
 @Component({
@@ -10,10 +10,20 @@ import { ServerItem  } from '../models/serveritem';
   styles: []
 })
 export class ServersComponent implements OnInit {
+  items: ServerItem[] = [];
   constructor() {
    }
 
   ngOnInit() {
+  }
+
+  onClick(serverData: {name: string, content: string, type: string}) {
+    this.items.push(
+      new ServerItem(
+        serverData.name,
+        serverData.content,
+        serverData.type
+        ));
   }
 }
 
