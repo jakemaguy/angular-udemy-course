@@ -11,7 +11,7 @@ export class ServerElementComponent implements OnInit {
   // by default all properties of components are only accessable inside that component
 
   // adding decorator to make accessable to parent classes
-  @Input() item: {type: string, name: string, content: string};
+  @Input('srvElement') item: {type: string, name: string, content: string};
   constructor() { }
 
   ngOnInit() {
