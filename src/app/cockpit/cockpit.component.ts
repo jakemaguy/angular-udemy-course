@@ -8,7 +8,7 @@ import { ServerItem } from '../models/serveritem';
 })
 export class CockpitComponent implements OnInit {
   // Need to add decorator to make this accessable to outside functions
-  @Output() serverCreated = new EventEmitter<{
+  @Output('serverclick') serverCreated = new EventEmitter<{
     name: string;
     content: string;
     type: string;
