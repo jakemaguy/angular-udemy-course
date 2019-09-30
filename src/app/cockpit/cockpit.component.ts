@@ -9,16 +9,18 @@ import { ServerItem } from '../models/serveritem';
 export class CockpitComponent implements OnInit {
   servername: string;
   servercontent: string;
-  
+
+
   constructor() { }
 
   ngOnInit() {
   }
-  onClick(servername: string, servercontent: string, type: string) {
-    console.log(`${servername} ${servercontent}`);
-    this.items.push(
-      new ServerItem(servername, servercontent, type)
-    );
+  onClick(servername: string, servercontent: string, typestr: string) {
+    //
+    //console.log(`${servername} ${servercontent}`);
+    //items.push(
+    // / {type: typestr, name: servername, content: servercontent}
+    //);
   }
 
 }

@@ -7,5 +7,5 @@ import { ServerItem } from './models/serveritem';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  items: ServerItem[] = [];
+  public items = [];
 }
