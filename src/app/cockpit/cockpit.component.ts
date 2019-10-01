@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 import { ServerItem } from '../models/serveritem';
 
 @Component({
@@ -17,12 +17,22 @@ export class CockpitComponent implements OnInit {
   servername: string;
   servercontent: string;
 
+  // argument is selector of html element/reference
+  @ViewChild('serverInputContent', {static: true}) serverContentInput: ElementRef;
+
   items = [];
 
   constructor() { }
 
   ngOnInit() {
   }
+
+  onRefClick(nameInput: HTMLInputElement) {
+    // Allows us to get html element itself
+    console.log(nameInput);
+    console.log(nameInput.value); // print text of element
+  }
+
 
   onClick(servername: string, servercontent: string, typestr: string) {
     this.serverCreated.emit({
