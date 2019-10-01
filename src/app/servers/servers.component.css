@@ -1,0 +1,12 @@
+/*
+Demonstrating view encapsulation:
+Changes the color of labels to red,
+will be applied globally to a;ll compoments
+with the encapsulatiion decorator set to none
+
+Changes the colors of all labels within the project
+*/
+
+label {
+    color: red;
+}

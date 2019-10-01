@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { ServerItem  } from '../models/serveritem';
 
 @Component({
@@ -6,8 +6,11 @@ import { ServerItem  } from '../models/serveritem';
   // Templates should be used when html gets over 3 lines or so
   templateUrl: './servers.component.html',
   styleUrls: ['./servers.component.css'],
-  // adding a css section for ngClass to reference to, in a specified scenerio
-  styles: []
+  // setting encapsulation to none
+  // by default, angular provides encapsulation to CSS styles
+  // only affecting invividual components
+  // emulated is the default
+  encapsulation: ViewEncapsulation.None
 })
 export class ServersComponent implements OnInit {
   items: ServerItem[] = [];
