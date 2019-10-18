@@ -6,7 +6,7 @@ import {  AccountsService } from '../accounts.service';
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
   styleUrls: ['./new-account.component.css'],
-  providers: [LoggingService, AccountsService] // tells angular to provide logging service
+  providers: [LoggingService] // tells angular to provide logging service
 })
 export class NewAccountComponent {
   // dependency injection for service - proper way to use services
