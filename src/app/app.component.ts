@@ -21,6 +21,6 @@ export class AppComponent {
     return this.counter.getActiveUsers();
   }
   getInactiveUsers() {
-    return this.counter.getActiveUsers();
+    return this.counter.getInactiveUsers();
   }
 }

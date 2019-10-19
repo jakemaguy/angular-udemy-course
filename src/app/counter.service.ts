@@ -1,23 +1,24 @@
-import { Injectable } from '@angular/core';
-import { UsersService } from './users.service';
-
-@Injectable()
 export class CounterService {
-  activeToInactive = 0;
-  InactiveToActive = 0;
-  constructor(private usersService: UsersService) { }
+  active: number;
+  inactive: number;
+  constructor() {
+    this.active = 0;
+    this.inactive = 0;
+  }
+
+  incrementActive() {
+    this.active += 1;
+  }
+
+  incrementInactive() {
+    this.inactive += 1;
+  }
 
   getActiveUsers() {
-    this.usersService.userSetToActive.subscribe(
-      () => this.activeToInactive += 1
-      );
-    return this.activeToInactive;
+    return this.active;
   }
 
   getInactiveUsers() {
-    this.usersService.userSetToInactive.subscribe(
-      () => this.InactiveToActive += 1
-    );
-    return this.InactiveToActive;
+    return this.inactive;
   }
 }
